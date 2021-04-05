@@ -35,37 +35,6 @@ class RegistrationType extends AbstractType
                     'placeholder' => 'Merci de saisir votre nom'
                 ]
             ])
-            ->add('birthday', BirthdayType::class, [
-                'label' => 'Votre date de naissance',
-                'widget' => 'single_text'
-            ])
-            ->add('phone', TelType::class, [
-                'label' => 'Votre numéro de téléphone',
-                'attr' => [
-                'placeholder' => '0123456789'
-    ]
-            ])
-            ->add('address', TextType::class, [
-                'label' => 'Votre adresse',
-                'constraints' => new  length(5, 5, 255),
-                'attr' => [
-                    'placeholder' => 'Merci de saisir votre adresse'
-                ]
-            ])
-            ->add('postalCode', NumberType::class, [
-                'label' => 'Code postal',
-                'constraints' => new  length(5),
-                'attr' => [
-                    'placeholder' => '99999'
-                ]
-            ] )
-            ->add('city', TextType::class, [
-                'label' => 'Ville',
-                'constraints' => new  length(3, 2, 100),
-                'attr' => [
-                    'placeholder' => 'Merci de saisir votre ville'
-                ]
-            ])
             ->add('username', TextType::class, [
                 'label' => 'Votre pseudo',
                 'constraints' => new  length(2, 2, 50),
