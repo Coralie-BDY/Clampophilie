@@ -25,7 +25,6 @@ body{
     text-decoration: none;
 }
 
-
 .btn{
     background-color: #313131;
     color: white;
@@ -34,7 +33,6 @@ body{
 .btn:hover{
     background-color: slateblue;
 }
-
 
 .card-signin {
     border: 0;
@@ -52,7 +50,6 @@ body{
     padding: 2rem;
 }
 
-
 .custom-footer {
     text-align: center;
     background: slateblue;
@@ -60,5 +57,10 @@ body{
     padding-top: 25px;
     width: 100%;
     bottom: 0;
+
+.bottom-footer {
+    background: slateblue;
+    padding: 25px 0;
+    text-align: center;
     color: #fff;
 }
