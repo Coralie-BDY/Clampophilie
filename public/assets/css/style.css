@@ -1,0 +1,64 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+body{
+    font-family: sans-serif !important;
+}
+.navbar{
+    background: slateblue !important;
+}
+
+.navbar-item-custom, .navbar-item-custom a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.btn{
+    background-color: #313131;
+    color: white;
+}
+
+.btn:hover{
+    background-color: slateblue;
+}
+
+
+.card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 2rem 2rem 2rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+    padding: 2rem;
+}
+
+
+.custom-footer {
+    text-align: center;
+    background: slateblue;
+    position: fixed;
+    padding-top: 25px;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+}
