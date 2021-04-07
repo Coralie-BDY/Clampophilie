@@ -57,11 +57,5 @@ body{
     padding-top: 25px;
     width: 100%;
     bottom: 0;
-}
-
-.bottom-footer {
-    background: slateblue;
-    padding: 25px 0;
-    text-align: center;
-    color: #fff;
+    color: #fff!important;
 }

@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -68,7 +69,7 @@ class RegistrationType extends AbstractType
                     ]
                 ]
             ])
-            ->add('cgv', null, [
+            ->add('cgv', CheckboxType::class, [
                 'label' => 'Accepter les CGV'
             ])
             ->add('submit', SubmitType::class, [

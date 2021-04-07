@@ -27,7 +27,6 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-<<<<<<< HEAD
                     <a class="nav-link" href="#">Nos produits</a>
                 </li>
                 <li class="nav-item active">
@@ -46,18 +45,6 @@
                 <a href="{{ path('registration') }}">Inscription</a>
             {% endif %}
             </div>
-=======
-                    <a class="nav-link" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            {% if app.user %}
-                <a class="nav-link" href="{{ path('account') }}">Mon compte</a> | <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-            {% else %}
-                <a class="nav-link" href="{{ path('app_login') }}">Connexion</a> | <a class="nav-link" href="{{ path('registration') }}">Inscription</a>
-            {% endif %}
->>>>>>> 269b30bbe2a57666269503555f73382d02da9a75
-
-
         </div>
     </nav>
 </header>
@@ -125,7 +112,7 @@
 
     <!-- FOOTER -->
     <footer class="custom-footer">
-        <p>
+        <p style="color: white">
             &copy; 2021 graine de dev'<br/>
            <small>&middot;Faux e-commerce sur Clamp &middot; <br/>
             <a href="#">Privacy</a> &middot;

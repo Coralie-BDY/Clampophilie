@@ -46,11 +46,6 @@ class User implements UserInterface
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $username;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $cgv;
@@ -159,14 +154,6 @@ class User implements UserInterface
 
         return $this;
     }
-
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
 
     public function getCgv(): ?bool
     {
