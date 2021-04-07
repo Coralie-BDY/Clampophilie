@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - Nos produits {% endblock %}
+
+{% block content %}
+
+    <h1>Nos produits </h1>
+    <div class="row">
+        {% for product in products %}
+
+            <div class="card mr-4 mb-4" style="width: 20rem;">
+                <img class="card-img-top" src="/uploads/{{ product.image }}" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.subtitle }}</p>
+                    <p class="card-text">{{ (product.price / 100)|number_format(2, ',', '.')}}€</p>
+                    <a href="{{ path('product', {'slug' : product.slug}) }}" class="btn btn-primary">voir plus</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

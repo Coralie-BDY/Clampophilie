@@ -15,6 +15,7 @@
 
 body{
     font-family: sans-serif !important;
+    position: relative;
 }
 .navbar{
     background: slateblue !important;
@@ -53,7 +54,7 @@ body{
 .custom-footer {
     text-align: center;
     background: slateblue;
-    position: fixed;
+    position: absolute;
     padding-top: 25px;
     width: 100%;
     bottom: 0;
