@@ -17,6 +17,7 @@ body{
     font-family: sans-serif !important;
     position: relative;
 }
+
 .navbar{
     background: slateblue !important;
 }
@@ -24,6 +25,10 @@ body{
 .navbar-item-custom, .navbar-item-custom a{
     color: white;
     text-decoration: none;
+}
+
+.shop {
+    height: 15px;
 }
 
 .btn{
@@ -60,3 +65,4 @@ body{
     bottom: 0;
     color: #fff!important;
 }
+

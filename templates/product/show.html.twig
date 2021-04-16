@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-md-5">
             <img src="/uploads/{{ product.image }}" alt="{{ product.name }}" class="img-fluid">
         </div>
@@ -14,7 +14,7 @@
             <p>
                 {{ product.description }}
             </p>
-            <a href="#" class="btn btn-primary">Ajouter au panier</a>
+            <a href="{{ path('add_to_cart', {'id' : product.id }) }}" class="btn btn-primary">Ajouter au panier</a>
         </div>
     </div>
 
