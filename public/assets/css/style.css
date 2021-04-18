@@ -66,4 +66,20 @@ body{
     color: #fff!important;
 }
 
+.form-check {
+    background-color: #e1d9e6!important;
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold!important;
+}
+
+.summary {
+    background-color: #e1d9e6;
+    padding:20px;
+    margin-top: 7px;
+
+}
 
