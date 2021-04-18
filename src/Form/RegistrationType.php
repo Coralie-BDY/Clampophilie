@@ -36,13 +36,6 @@ class RegistrationType extends AbstractType
                     'placeholder' => 'Merci de saisir votre nom'
                 ]
             ])
-            ->add('username', TextType::class, [
-                'label' => 'Votre pseudo',
-                'constraints' => new  length(2, 2, 50),
-                'attr' => [
-                    'placeholder' => 'merci de saisir votre pseudo'
-                ]
-            ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email',
                 'constraints' => new  length(5, 5, 100),
