@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - Erreur de commande{% endblock %}
+
+{% block content %}
+    <h2>Quel dommage </h2>
+    <p>
+        Bonjour <strong>{{ order.user.fullName }}</strong>,
+    </p>
+    <p>
+        Il semblerait que votre commande n'a pu aboutir, qui concerne la <strong>n°{{ order.reference }}</strong> .</p>
+    <p>
+        Une confirmation de votre commande vous a été envoyé par email à l'adresse suivante : <strong> {{ order.user.email }}</strong>.
+    </p>
+    <a href="{{ path('order') }}" class="btn"> Réesayer le paiement </a>
+
+
+    <div class="mb-5"></div>
+
+{% endblock %}

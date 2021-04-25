@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - Confirmation de commande{% endblock %}
+
+{% block content %}
+    <h2>Confirmation de commande</h2>
+    <p>
+        Bonjour <strong>{{ order.user.fullName }}</strong>,
+    </p>
+    <p>
+        Nous vous remercions de votre commande <strong>n°{{ order.reference }}</strong> .</p>
+    <p>
+        Une confirmation de votre commande vous a été envoyé par email à l'adresse suivante : <strong> {{ order.user.email }}</strong>.
+    </p>
+    <p class="mb-5">
+        Votre commande sera livrée à par : <strong>{{ order.carrierName }}</strong>
+        <br>
+        à cette adresse :
+        <br> <br>
+        <strong>
+        {{ order.delivery|raw }}
+        </strong>
+    <hr>
+    Pour suivre votre commance, rendez-vous sur <a href="{{ path('account') }}"> votre espace </a>.
+    </p>
+
+    <div class="mb-5"></div>
+
+{% endblock %}
