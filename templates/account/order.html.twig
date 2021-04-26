@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - Mes commandes{% endblock %}
+
+{% block content %}
+    <h1> Mes commandes </h1>
+
+    <p>
+        Bienvenue {{ app.user.firstname }} dans votre profil. <br/>
+        C'est ici que vous allez pouvoir gérer toutes vos commandes.
+    </p>
+    <a href="{{ path('account') }}">Retour</a>
+    {% if orders|length == 0 %}
+        <p class="text-center mb-5">
+            Vous n'avez pas encore passer de commandes chez nous.
+        </p>
+    {% else %}
+            <table class="table table-hover mb-5 mt-5">
+                <thead class="table-info">
+                <tr>
+                    <th scope="col">Référence</th>
+                    <th scope="col">Passée le</th>
+                    <th scope="col">Produit(s)</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td class="badge badge-light">{{ order.reference }}</td>
+                        <td>{{ order.createdAt|date('d/m/Y') }}</td>
+                        <td>{{ order.orderDetails|length }}</td>
+                        <td>{{((order.carrierPrice + order.getTotal)/100)|number_format(2, ',', '.')}} €</td>
+                        <td class="text-right"><a href="{{ path('account_show_order', { 'reference' : order.reference }) }}">Voir la commande</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    {% endif %}
+    <div class="mb-5"></div>
+{% endblock %}
