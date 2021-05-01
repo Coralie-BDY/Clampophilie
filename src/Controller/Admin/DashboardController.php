@@ -9,6 +9,7 @@ use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,6 +26,10 @@ class DashboardController extends AbstractDashboardController
 
         return $this->redirect($routeBuilder->setController(OrderCrudController::class)->generateUrl());
 
+    }
+    public function configureAssets(): Assets
+    {
+        return Assets::new()->addCssFile('assets/css/admin.css');
     }
 
     public function configureDashboard(): Dashboard

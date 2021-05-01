@@ -48,8 +48,6 @@ class OrderController extends AbstractController
         ]);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
-
-            $order = new Order();
             $date = new \DateTime();
             $carriers = $form->get('carriers')->getData();
             $delivery = $form->get('addresses')->getData();
@@ -57,7 +55,7 @@ class OrderController extends AbstractController
             $deliveryContent .=  '<br>'.$delivery->getPhone();
             $deliveryContent .=  '<br>'.$delivery->getAddress();
             $deliveryContent .=  '<br>'.$delivery->getPostalcode().' '.$delivery->getCity();
-
+            $order = new Order();
             $reference = $date->format('dmY').'-'.uniqid();
             $order->setReference($reference);
             $order->setUser($this->getUser());
@@ -65,7 +63,7 @@ class OrderController extends AbstractController
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
             $order->setDelivery($deliveryContent);
-            $order->setIsPaid(0);
+            $order->setState(0);
 
             $this->entityManager->persist($order);
 

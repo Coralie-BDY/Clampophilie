@@ -26,10 +26,12 @@ class OrderThanksController extends AbstractController
         if (!$order || $order->getUser() != $this->getUser()){
             $this->redirectToRoute('home');
         }
-        if(!$order->getIsPaid()){
+        if(!$order->getState() == 0){
             $cart->remove();
-            $order->setIsPaid(1);
+            $order->setState(1);
             $this->entityManager->flush();
+
+            //envoi de l'email pour confirmer la commande
 
         }
 
