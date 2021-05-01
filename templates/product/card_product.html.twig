@@ -1,0 +1,18 @@
+<div class="product-grid">
+    <div class="product-image">
+        <a href="{{ path('product', {'slug' : product.slug}) }}">
+            <img class="picture" src="/uploads/{{ product.image }}" alt="{{ product.name }}">
+        </a>
+    </div>
+    <div class="product-content">
+        <h3 class="title">{{ product.name }}</h3>
+        <div class="price">{{ (product.price / 100)|number_format(2, ',', '.') }}€
+        </div>
+    </div>
+    <ul class="view">
+        <li><a href="{{ path('product', {'slug' : product.slug}) }}" data-tip="Voir le produit"><i
+                        class="fa fa-search"></i></a></li>
+        <li><a href="{{ path('add_to_cart', {'id' : product.id }) }}" data-tip="Mettre au panier"><i
+                        class="fa fa-shopping-cart"></i></a></li>
+    </ul>
+</div>

@@ -12,18 +12,8 @@
             <h2>Nos produits </h2>
             <div class="row mt-5">
                 {% for product in products %}
-                    <div class="col-md-4">
-                        <div class="card mb-3" style="width: 12rem;">
-                            <img class="card-img-top" src="/uploads/{{ product.image }}" alt="{{ product.name }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.subtitle }}</p>
-                                <p class="card-text">{{ (product.price / 100)|number_format(2, ',', '.') }}€</p>
-                                <a href="{{ path('product', {'slug' : product.slug}) }}" class="btn btn-sm float-right">
-                                    voir plus
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col-md-3 col-sm-6 mb-5">
+                        {% include 'product/card_product.html.twig' %}
                     </div>
                 {% endfor %}
             </div>
