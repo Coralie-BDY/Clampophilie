@@ -204,7 +204,7 @@ body {
 .product-grid .view li a:after, .product-grid .view li a:before {
     content: attr(data-tip);
     color: #fff;
-    background-color: slateblue;;
+    background-color: slateblue;
     font-size: 12px;
     letter-spacing: 1px;
     line-height: 20px;
@@ -238,7 +238,7 @@ body {
     }
 }
 
-/* Zoom PRODUCT DETAILS */
+/* ZOOM PRODUCT DETAILS */
 .hover figure img {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -258,5 +258,27 @@ body {
 
 .color-content {
     color: white;
+}
+
+/* ACCOUNT PAGE*/
+.account-item {
+    background-color: #E1D9E6;
+    padding: 70px;
+    transition: transform .2s;
+}
+.account-item:hover{
+    transform: scale(1.2);
+}
+
+.account-item a {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: slateblue;
+    font-weight: bold;
+}
+
+.account-item a:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 

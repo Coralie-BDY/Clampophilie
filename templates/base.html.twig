@@ -34,13 +34,17 @@
                     <a class="nav-link" href="#">Qui sommes-nous ?</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                 </li>
             </ul>
             <div class="navbar-item-custom">
                 {% if app.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="/admin">Administration</a> |
+                    {% endif %}
                     <a href="{{ path('account') }}">Mon compte <small>({{ app.user.firstname }})</small></a> |
                     <a href="{{ path('app_logout') }}">Déconnexion</a>
+
                 {% else %}
                     <a href="{{ path('app_login') }}">Connexion</a> |
                     <a href="{{ path('registration') }}">Inscription</a>
@@ -70,7 +74,7 @@
                     </svg>
                     <div class="container">
                         <div class="carousel-caption text-right my-auto mt-5">
-                            <img  src="/uploads/{{ header.title }}" alt="Clampophilie" class="logo">
+                            <img  src="/uploads/{{ header.title }}" alt="Clampophilie" class="logo img-fluid">
 {#                            <p class="color-content">{{ header.content }}</p>#}
 {#                            <p><a class="btn btn-lg" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a></p>#}
                         </div>

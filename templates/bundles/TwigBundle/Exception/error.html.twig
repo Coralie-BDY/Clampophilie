@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - OUPS{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>OUPS, la page n'existe pas </h2>
+        <img src="{{ asset('assets/img/logo2.png') }}" alt="logo Clampophilie" class="mt-5 text-center img-fluid">
+        <p class="text-center mt-5">Désolé, la page que vous cherchez n'existe pas</p>
+        <a href="{{ path('home') }}" class="btn text-center mt-5">retournez à l'accueil</a>
+    </div>
+
+{% endblock %}
