@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - Passage de la commande{% endblock %}
+
+{% block content %}
+    <h1>Passage de la commande</h1>
+    <p>Choisissez vos préférences avant de passer votre commande.</p>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            {% set formHtml %}
+                {{ form_start(form, {action:path('order_summary')}) }}
+                {{ form_label(form.addresses, 'Choississez votre adresse de livraison') }}
+                <small>
+                    <a href="{{ path('account_add_address') }}" class="btn btn-sm"> Ajouter une nouvelle adresse</a>
+                </small>
+                {{ form_end(form) }}
+            {% endset %}
+            {{ formHtml|replace({'[br]' : '<br>'})|raw }}
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <b>Votre commande</b> <br>
+                <p>Retrouvez ici vos produits</p>
+            </div>
+            <div class="summary">
+                {% for key, product in cart %}
+                    <div class="row {% if key > 0 %} mt-2 {% endif %}">
+                        <div class="col-md-2 mt-4">
+                            <img src="/uploads/{{ product.product.image }}" alt="{{ product.product.name }}"
+                                 height="75px">
+                        </div>
+                        <div class="col-md-8 my-auto mt-4">
+                            {{ product.product.name }} <br>
+                            <small>{{ product.product.subtitle }}</small>
+                        </div>
+                        <div class="col-md-2 my-auto mt-4">
+                            x {{ product.quantity }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="mb-5"></div>
+
+
+{% endblock %}

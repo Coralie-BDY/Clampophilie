@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clampophilie - Mes adresses{% endblock %}
+
+{% block content %}
+    <h1> Mes adresses </h1>
+    <a href="{{ path('account_add_address') }}" class="btn btn-sm float-right">Ajouter une adresse</a>
+
+
+    <p>Bienvenue {{ app.user.firstname }} dans votre profil. <br/>
+        C'est ici que vous allez pouvoir gérer toutes vos adresse.
+    <hr>
+    <a href="{{ path('account') }}">Retour</a> <br/>
+    </p>
+    <hr>
+    {% if app.user.addresses|length == 0 %}
+        <p class="text-center mb-5"> Vous n'avez pas encore d'adresse.
+            Pour ce faire veuillez <a href="{{ path('account_add_address') }}">en ajouter une</a></p>
+    {% else %}
+        <div class="row">
+            {% for address in app.user.addresses %}
+                <div class="col-md-4">
+                    <div class="card mb-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ address.name }}</h5>
+                            <p class="card-text">{{ address.address }},
+                                <br>
+                                {{ address.postalCode }} - {{ address.city }}
+                                <br>
+                                Tél : {{ address.phone }}
+                            </p>
+                            <div class="text-center">
+                            <a href="{{ path('account_edit_address', { 'id' : address.id }) }}" class="btn btn-sm">Modifier</a>
+                            <a href="{{ path('account_delete_address', {'id' : address.id }) }}" class="btn btn-sm">Supprimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div class="mb-5"></div>
+
+
+{% endblock %}

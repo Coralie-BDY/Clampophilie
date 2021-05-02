@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -35,13 +36,6 @@ class RegistrationType extends AbstractType
                     'placeholder' => 'Merci de saisir votre nom'
                 ]
             ])
-            ->add('username', TextType::class, [
-                'label' => 'Votre pseudo',
-                'constraints' => new  length(2, 2, 50),
-                'attr' => [
-                    'placeholder' => 'merci de saisir votre pseudo'
-                ]
-            ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email',
                 'constraints' => new  length(5, 5, 100),
@@ -68,7 +62,7 @@ class RegistrationType extends AbstractType
                     ]
                 ]
             ])
-            ->add('cgv', null, [
+            ->add('cgv', CheckboxType::class, [
                 'label' => 'Accepter les CGV'
             ])
             ->add('submit', SubmitType::class, [

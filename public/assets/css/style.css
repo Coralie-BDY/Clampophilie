@@ -1,3 +1,5 @@
+/*TEMPLATE BOOTSTRAP*/
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -13,27 +15,43 @@
     }
 }
 
-body{
+/* NAV AND BODY*/
+body {
     font-family: sans-serif !important;
+    position: relative;
 }
-.navbar{
+
+.navbar {
     background: slateblue !important;
 }
 
-.navbar-item-custom, .navbar-item-custom a{
+.navbar-item-custom, .navbar-item-custom a {
     color: white;
     text-decoration: none;
 }
 
-.btn{
+.shop {
+    height: 15px;
+}
+/*LOGO*/
+.logo {
+    vertical-align: bottom;
+    border-style: double;
+    border-radius: 20px;
+}
+
+/*BUTTON COLOR*/
+
+.btn {
     background-color: #313131;
     color: white;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: slateblue;
 }
 
+/*LOGIN CARD*/
 .card-signin {
     border: 0;
     border-radius: 1rem;
@@ -49,19 +67,218 @@ body{
 .card-signin .card-body {
     padding: 2rem;
 }
-
+/*FOOTER*/
 .custom-footer {
     text-align: center;
     background: slateblue;
-    position: fixed;
+    position: absolute;
     padding-top: 25px;
     width: 100%;
     bottom: 0;
+    color: #fff !important;
 }
 
-.bottom-footer {
-    background: slateblue;
-    padding: 25px 0;
-    text-align: center;
-    color: #fff;
+/*FORM*/
+.form-check {
+    background-color: #e1d9e6 !important;
+    padding: 20px 65px;
+    margin-top: 7px;
 }
+
+.col-form-label {
+    font-weight: bold !important;
+}
+
+.summary {
+    background-color: #e1d9e6;
+    padding: 20px;
+    margin-top: 7px;
+}
+
+/*PRODUCT CARD*/
+.product-grid, .product-grid .product-image {
+    overflow: hidden
+}
+
+.product-grid {
+    /*font-family:'Open Sans',sans-serif;*/
+    text-align: center;
+    position: relative;
+    transition: all .5s ease 0s
+}
+
+.product-grid:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
+
+.product-grid .product-image a {
+    display: block
+}
+
+.product-grid .product-image img {
+    width: 100%;
+    height: auto;
+    transition: all .5s ease 0s
+}
+
+.product-grid:hover .product-image img {
+    transform: scale(1.1)
+}
+
+.product-grid . {
+    padding: 12px 12px 15px;
+    transition: all .5s ease 0s
+}
+
+.product-grid:hover .product-content {
+    opacity: 0
+}
+
+.product-grid .title {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+    transition: all .3s ease 0s
+}
+
+.product-grid .title a {
+    color: #000
+}
+
+.product-grid .title a:hover {
+    color: slateblue;
+}
+
+.product-grid .price {
+    font-size: 18px;
+    font-weight: 600;
+    color: slateblue;
+}
+
+.product-grid .view {
+    background-color: #fff;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    z-index: 1;
+    transition: all .5s ease 0s
+}
+
+.product-grid:hover .view {
+    opacity: 1;
+    bottom: 20px
+}
+
+.product-grid .view li {
+    display: inline-block
+}
+
+.product-grid .view li a {
+    color: #909090;
+    font-size: 16px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    margin: 0 7px;
+    border: 1px solid #909090;
+    border-radius: 50px;
+    display: block;
+    position: relative;
+    transition: all .3s ease-in-out
+}
+
+.product-grid .view li a:hover {
+    color: #fff;
+    background-color: slateblue;;
+    width: 80px
+}
+
+.product-grid .view li a:after, .product-grid .view li a:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: slateblue;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px
+}
+
+.product-grid .view li a:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -20px;
+    z-index: -1
+}
+
+.product-grid .view li a:hover:after, .product-grid .view li a:hover:before {
+    opacity: 1
+}
+
+@media only screen and (max-width: 990px) {
+    .product-grid {
+        margin-bottom: 30px
+    }
+}
+
+/* ZOOM PRODUCT DETAILS */
+.hover figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.hover figure:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.color-title {
+    color: black;
+    font-weight: bold;
+}
+
+.color-content {
+    color: white;
+}
+
+/* ACCOUNT PAGE*/
+.account-item {
+    background-color: #E1D9E6;
+    padding: 70px;
+    transition: transform .2s;
+}
+.account-item:hover{
+    transform: scale(1.2);
+}
+
+.account-item a {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: slateblue;
+    font-weight: bold;
+}
+
+.account-item a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+

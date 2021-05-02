@@ -28,21 +28,31 @@ class RegistrationController extends AbstractController
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
+        $notification = null;
         $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $user = $form->getData();
-            $password = $encoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
+            $email_search = $this->entityManager->getRepository(User::class)->findOneByEmail($user->getEmail());
+            if(!$email_search){
+                $password = $encoder->encodePassword($user, $user->getPassword());
+                $user->setPassword($password);
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
+                $notification = "L'inscription s'est bien passée, vous pouvez vous connecter à votre compte";
+                //envoi d'un mail pour confirmer l'inscription
+            } else {
+                $notification = "L'email utilisé a déjà un compte associé";
+
+            }
 
         }
 
         return $this->render('registration/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'notification' =>$notification
         ]);
     }
 }
